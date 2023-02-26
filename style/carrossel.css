@@ -1,0 +1,217 @@
+.carrossel__titulo {
+    color: var(--cor-destaque);
+    background-color: var(--branco-contraste);
+    text-align: center;
+    font-weight: 700;
+    font-size: var(--tamanho-titulo);
+    padding: 1.25rem 0;
+}
+
+.swiper-pagination {
+    position: initial;
+    padding: 1rem 0;
+}
+
+.swiper-wrapper {
+    height: 15.5625rem;
+    width: 11.1875rem;
+} 
+
+.swiper-slide, .swiper-slide img {
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    display: none;
+}
+
+/*Card*/
+.card {
+    background-color: var(--branco-contraste);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 81.3vw;
+    height: 18.5rem;
+    margin: 1.25rem auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card__descricao {
+    display: grid;
+    gap: 0.8rem;
+    grid: repeat(3, auto) / auto auto;
+}
+
+.descricao__titulo{
+    font-weight: 700;
+    color: var(--cor-destaque);
+    line-height: 1.5rem;
+}
+
+.descricao__titulo-livro {
+    font-weight: 700;
+    font-size: var(--tamanho-titulo);
+    color: var(--cor-titulo);
+    line-height: 1.69rem;
+}
+
+.descricao__texto {
+    line-height: 1.31rem;
+    font-size: var(--tamanho-texto);
+    color: var(--cor-texto);
+    padding-right: 1.31rem;
+}
+
+.descricao__imagem {
+    grid-area: 1 / 2 / 4 / 3;
+    flex-grow: 1;
+}
+
+.card__icones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.icones__botao {
+    text-align: center;
+    line-height: 1.5rem;
+    width: 8rem;
+    background-color: var(--cor-destaque);
+    color: var(--branco-contraste);
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+}
+
+.descricao__avaliacao {
+    width: 5.69rem;
+    height: 1rem;
+}
+
+@media screen and (max-width: 409px) {
+    .card {
+        height: fit-content;
+    }
+    
+    .descricao__texto {
+        grid-area: 3 / 1 / 4 / 3;
+    }
+
+    .descricao__imagem {
+        grid-row-end: 3;
+        width: 37.61vw;
+        height: 39.25vw;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .icones__botao {
+        font-size: var(--tamanho-texto);
+    }
+
+    .icones__botao {
+        width: 30.37vw;
+    }
+
+    .descricao__avaliacao {
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .carrossel__titulo {
+        font-size: 1.625rem;
+        padding-top: 3.1875rem;
+    }
+
+    .swiper-pagination {
+        margin: 2rem 0 3rem 0;
+        padding: 0;
+    }
+
+    .swiper {
+        width: 72%;
+        padding-bottom: 1.875rem;
+    }
+
+    .swiper-wrapper {
+        height: 16.625rem;
+        width: 12rem;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        display: block;
+        top: 60%;
+        color: transparent;
+    }
+
+    .swiper-button-prev::before, .swiper-button-next::before {
+        color: var(--branco-contraste);
+        font-size: 1.5rem;
+        font-weight: 400;
+        background: var(--gradient-azul);
+        border-radius: 50%;
+        padding: 28% 64%;
+    }
+
+    .swiper-button-prev::before {
+        content:"<";
+    }
+
+    .swiper-button-next {
+        padding-right: 1rem;
+    }
+
+    .swiper-button-next::before{
+        content:">";
+    }
+
+    .card {
+        width: 57.42vw;
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (min-width: 1728px){
+    .livros__flex {
+        padding: 3rem 7%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 3.75rem;
+    }
+
+    .swiper-pagination {
+        margin: 1rem 0 1.5rem 0;
+    }
+
+    .swiper-wrapper {
+        height: auto;
+        width: auto;
+    }
+
+    .card {
+        width: 50vw;
+    }
+
+    .descricao__titulo {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+    .descricao__texto {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-right: 3rem;
+    }
+
+    .icones__imagem:hover {
+        cursor: pointer;
+    }
+}

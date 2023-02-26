@@ -1,0 +1,227 @@
+.cabecalho {
+    background-color: var(--branco-contraste);
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.marca__imagem {
+    justify-self: start;
+    padding: 0 1vw;
+    width: 13.08vw;
+    height: 9.34vw;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.container label {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.container label:hover {
+    cursor: pointer;
+}
+
+.container__botao:checked ~ label {
+    background-image: var(--gradient-azul);
+}
+
+.container__botao, .menu-aberto, .lista-menu, .container__titulo, .opcoes, .perfil__texto {
+    display: none;
+}
+
+.cabecalho__menu-hamburguer {
+    width: 3rem;
+    height: 3rem;
+    background-image: url(../img/Menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
+}
+
+.container__botao:checked ~  label .menu-aberto {
+    display: inline-block;
+    padding: 0;
+    height: 3rem;
+    width: 3rem;
+}
+
+.lista-menu {
+    position: absolute;
+    top: 100%;
+    background-color: var(--branco-contraste);
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    padding: 0.5rem 0;
+    width: 59vw;
+}
+
+.container__botao:checked ~ .lista-menu {
+    display: flex;
+    width: 59vw;
+}
+
+.lista-menu__titulo {
+    font-weight: 700;
+    color: var(--cor-destaque);
+    padding: 1rem 1.5rem;
+}
+
+.lista-menu__item {
+    background: var(--gradient-azul);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+}
+
+.lista-menu__link {
+    padding-right: 2.56rem;
+}
+
+.perfil__imagem:nth-child(1) {
+    width: 15.65vw;
+    height: 11.21vw;
+}
+
+@media screen and (min-width: 428px) {
+    .marca__imagem {
+        width: 40px;
+        height: 40px;
+    }
+
+    .perfil__imagem:nth-child(1) {
+        width: 3.5rem;
+        height: 3rem;
+    }
+}
+
+/*Tablets*/
+@media screen and (min-width: 1024px) {
+    .cabecalho {
+        padding: 1.25rem 5rem;
+    }
+
+    .container, .opcoes__botao, .perfil__imagem-transparente {
+        display: none;
+    }
+
+    .container__marca {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .container__titulo--negrito, .container__titulo {
+        font-family: var(--fonte-titulo);
+        font-size: 1.875rem;
+        font-weight: 400;
+    }
+
+    .container__titulo {
+        display: block;
+        align-self: baseline;
+    }
+
+    .container__titulo--negrito{ 
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .opcoes label {
+        position: relative;
+    }
+
+    .opcoes__botao:checked ~ .lista-menu {
+        display: flex;
+        width: auto;
+    }
+
+    .opcoes__item {
+        padding: 1.125rem;
+        text-transform: uppercase;
+        color: var(--cor-texto);
+    }
+
+    .opcoes__botao:checked ~ label .opcoes__item {
+        color: var(--branco-contraste);
+        background: var(--gradient-azul);
+        
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .cabecalho {
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        gap: 3.5rem;
+        justify-content: start;
+    }
+
+    label .opcoes__item:hover {
+        cursor: pointer;
+    }
+
+    .opcoes__item:hover {
+        color: var(--branco-contraste);
+        background: var(--gradient-azul);
+    }
+
+    .lista-menu__item {
+        width: 100%;
+        padding: 1rem 0;
+    }
+    
+    .lista-menu__link {
+        padding-left: 1.5rem;
+    }
+
+    .lista-menu__item:hover {
+        -webkit-text-fill-color: var(--branco-contraste);
+        background: var(--gradient-azul);
+        color: var(--branco-contraste);
+    }
+
+
+    .perfil {
+        display: flex;
+        justify-self: end;
+        gap: 4rem;
+    }
+
+    .perfil__link {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .perfil__texto {
+        display: block;
+        font-size: 1.25rem;
+    }
+}
